@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+
+import { 
+  useFonts,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_700Bold
+ } from '@expo-google-fonts/poppins';
+
+import theme from './src/global/styles/theme'
+import { Dashboard } from './src/screens/Dashboard';
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Gabriel você vai arrasar nessa porra!!!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold
+  });
+  if(!fontsLoaded){
+    return <AppLoading />
+  }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#5979c3',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <ThemeProvider theme={theme}>
+      <Dashboard />
+    </ThemeProvider>  
+  )
+}

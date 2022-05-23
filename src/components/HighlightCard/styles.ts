@@ -10,7 +10,7 @@ export const Container = styled.View<TypeProps>`
     background-color: ${({ theme, type }) =>
     type === "total" ? theme.colors.secondary.main : theme.colors.shape};
 
-    width: ${RFValue(300)}px;
+    width: ${RFValue(340)}px;
     border-radius: 5px;
 
     padding: 19px 23px;
@@ -34,15 +34,15 @@ export const Title = styled.Text<TypeProps>`
 export const Icon = styled(Feather)<TypeProps>`
     font-size: ${RFValue(40)}px;
 
-    ${({ type }) => type === 'up' && css`
+    ${({ type }) => type === "up" && css`
         color: ${({ theme }) => theme.colors.success.main};
     `}
 
-    ${({ type }) => type === 'down' && css`
+    ${({ type }) => type === "down" && css`
         color: ${({ theme }) => theme.colors.attention.main};
     `}
 
-    ${({ type }) => type === 'total' && css`
+    ${({ type }) => type === "total" && css`
         color: ${({ theme }) => theme.colors.shape};
     `}
 `;

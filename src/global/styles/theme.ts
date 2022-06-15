@@ -1,11 +1,11 @@
 export default {
     colors: {
         primary: {
-            main: '#5636D3',
+            main: '#161E2F',
         },
         secondary: {
-            main:'#FF872C',
-            light: 'rgba(255, 135, 44, 0.3)',
+            main:'#2BD19E',
+            light: 'rgba(43, 209, 158 ,0.3)',
         },
         success: {
             main:'#12A454',
